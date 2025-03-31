@@ -1,0 +1,32 @@
+# Click to open a single notebook in a JupyterHub
+
+This is an approach developed by Eli Holmes (NOAA Fisheries, @eeholmes).  It is a big deal for teaching workshops, as it enables someone to click a link and open a single notebook in a JupyterHub. This is preferable to other options where someone would have to use GitHub to clone a whole repository, or use nbgitpuller to clone a whole repository. This makes it easier for workshop participants (no need to navigate into subfolders) and keeps hub costs low (no cloning lots of files that won't be used).
+
+## Working example: NMFS Hackdays
+
+1. From <https://nmfs-opensci.github.io/NMFSHackDays-2025/topics-2025/2025-opendap/1-ncep-ncar.html>, click the orange button:
+
+![](images/nmfshackdays.png)
+
+2. A popup window opens; click "Open notebook"
+
+![](images/jupyter-notebook-link-generator.png)
+
+3. This takes you to the NMFS Openscapes Jupyter Hub landing page, and you can click to log in if you have access permission (i.e. you are a mentor or workshop participant). It will give you a base image to select.
+
+4.The notebook will be open in your home directory! Celebrate – this is quite streamlined for new learners and will keep storage costs low!
+
+
+## Setup steps
+
+For the hub and notebook where you are teaching:
+
+1. In the hub environment (by admin), `pip install jupyterlab-open-url-parameter`. 
+  - [NMFS Hackdays example](https://github.com/nmfs-opensci/py-rocket-base/blob/main/environment.yml#L61)
+2. In a markdown cell in the jupyter notebook, create a link that will redirect using a raw github user content link.
+  - Example: `[Open Notebook In Jupyter Hub](https://nmfs-openscapes.2i2c.cloud/hub/user-redirect/lab?fromURL=https://raw.githubusercontent.com/nmfs-opensci/nmfshackdays-2025/main/topics-2025/2025-opendap/1-ncep-ncar.ipynb)`
+  - The two parts are: 
+    - `https://nmfs-openscapes.2i2c.cloud/hub/user-redirect/lab?fromURL=`
+    - `https://raw.githubusercontent.com/nmfs-opensci/nmfshackdays-2025/main/topics-2025/2025-opendap/1-ncep-ncar.ipynb`
+   
+Note: Eli also developed this using a widget, not bare-bones necessary and not documented yet!
