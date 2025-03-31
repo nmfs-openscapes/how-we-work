@@ -28,3 +28,5 @@ For the hub and notebook where you are teaching:
   - The two parts are: 
     - `https://nmfs-openscapes.2i2c.cloud/hub/user-redirect/lab?fromURL=`
     - `https://raw.githubusercontent.com/nmfs-opensci/nmfshackdays-2025/main/topics-2025/2025-opendap/1-ncep-ncar.ipynb`
+   
+Note: Eli also developed this using a widget, not bare-bones necessary and not documented yet!
